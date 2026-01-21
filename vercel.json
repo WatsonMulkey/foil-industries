@@ -3,6 +3,14 @@
   "outputDirectory": "dist",
   "rewrites": [
     {
+      "source": "/TheNumber",
+      "destination": "https://thenumber-rust.vercel.app/"
+    },
+    {
+      "source": "/TheNumber/",
+      "destination": "https://thenumber-rust.vercel.app/"
+    },
+    {
       "source": "/TheNumber/:path*",
       "destination": "https://thenumber-rust.vercel.app/:path*"
     }
