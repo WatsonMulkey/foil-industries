@@ -25,3 +25,6 @@ pnpm-debug.log*
 
 # temporary archives
 *.zip
+
+.vercel
+.env*.local

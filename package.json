@@ -1,5 +1,5 @@
 {
-  "name": "foil-industries-v2",
+  "name": "foil-engineering",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -10,5 +10,9 @@
   },
   "dependencies": {
     "astro": "^5.16.6"
+  },
+  "devDependencies": {
+    "prettier": "^3.7.4",
+    "prettier-plugin-astro": "^0.14.1"
   }
 }

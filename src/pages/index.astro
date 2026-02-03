@@ -4,30 +4,6 @@ import Header from '../components/Header.astro';
 ---
 
 <BaseLayout>
-  <!-- Password Protection Overlay -->
-  <div id="password-overlay" class="password-overlay">
-    <div class="password-container">
-      <div class="password-logo">
-        <svg width="50" height="50" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M50 10L90 30V70L50 90L10 70V30L50 10Z" stroke="#D4A017" stroke-width="3" fill="none"/>
-        </svg>
-      </div>
-      <h2 class="password-title">FOIL Engineering</h2>
-      <p class="password-subtitle">Site Under Construction</p>
-      <form id="password-form" class="password-form">
-        <input
-          type="password"
-          id="password-input"
-          class="password-input"
-          placeholder="Enter password"
-          autocomplete="off"
-        />
-        <button type="submit" class="password-submit">Enter</button>
-        <p id="password-error" class="password-error"></p>
-      </form>
-    </div>
-  </div>
-
   <Header />
 
   <main id="main-content">
@@ -43,7 +19,7 @@ import Header from '../components/Header.astro';
         <p class="hero-subtitle">
           Product solutions. // Service design and process management. // Bespoke tooling.
         </p>
-        <p class="hero-support">10 years of software experience invested in your success</p>
+        <p class="hero-support">Over 10 years of software and people experience; helping you get the right solution to the right problem.</p>
         <a href="#solutions" class="cta-button">Explore Solutions</a>
       </div>
     </section>
@@ -54,7 +30,7 @@ import Header from '../components/Header.astro';
         <div class="section-eyebrow">WHAT WE DO</div>
         <h2 class="section-title">Solutions</h2>
         <p class="section-subtitle">
-          Three pillars of expertise: strategic product thinking, thoughtful service design, and custom-built tools that solve real problems.
+          From organizational and process change to 0-1 product design and custom tooling.
         </p>
       </div>
 
@@ -65,13 +41,38 @@ import Header from '../components/Header.astro';
           <div class="card-header">
             <div>
               <h3 class="card-title">Product Management</h3>
-              <p class="card-tagline">Strategy meets execution</p>
+              <p class="card-tagline">"People dont want to buy a quarter inch drill, they want a quarter inch hole."</p>
             </div>
             <div class="card-number">01</div>
           </div>
-          <p class="card-description">
-            Eight years transforming user insights into measurable outcomes: 32% YoY engagement growth at Discovery Education, 50% faster completion times at Simplifya. Expertise spans cross-functional leadership, data-driven experimentation, and multi-vertical roadmapping. The focus remains constant—delivering products that create tangible value for users and businesses through rigorous prioritization, strategic vision, and relentless attention to what actually moves metrics.
-          </p>
+          <div class="card-services">
+            <h5 class="services-heading">Services</h5>
+            <dl class="services-list">
+              <dt>Product Strategy & Vision</dt>
+              <dd>Defining product-market fit, user personas, competitive analysis, and long-term vision.</dd>
+
+              <dt>0-1 Product Management</dt>
+              <dd>Validating, designing, planning, building, testing, and launching new products and features.</dd>
+
+              <dt>Agile Team Leadership</dt>
+              <dd>Agile ceremonies and facilitation for cross-functional teams of all sizes.</dd>
+
+              <dt>Product Coaching</dt>
+              <dd>Working with new Product Managers and stakeholders to better represent product needs and process.</dd>
+
+              <dt>Metrics & A/B Testing</dt>
+              <dd>Setting up data pipelines, dashboards, and experiments to measure success and inform roadmap decisions.</dd>
+
+              <dt>Go-to-Market Strategy</dt>
+              <dd>How, where, and when to launch.</dd>
+
+              <dt>User Research & Testing</dt>
+              <dd>Interviews, surveys, usability testing, and sentiment analysis.</dd>
+
+              <dt>Roadmap Planning</dt>
+              <dd>Prioritization frameworks, stakeholder alignment, and delivery tracking.</dd>
+            </dl>
+          </div>
           <div class="card-footer">
             <a href="#contact" class="card-link">Learn More</a>
           </div>
@@ -83,13 +84,35 @@ import Header from '../components/Header.astro';
           <div class="card-header">
             <div>
               <h3 class="card-title">Service Design</h3>
-              <p class="card-tagline">Process, perfected</p>
+              <p class="card-tagline">"The best process is the one people actually follow."</p>
             </div>
             <div class="card-number">02</div>
           </div>
-          <p class="card-description">
-            Operational architecture that scales. Designed agile frameworks for globally distributed teams at Bookshop.org, built issue tracking systems reducing resolution time 40% at The Iron Yard. Specialization includes executive reporting pipelines, cross-functional enablement content, and enterprise-wide process documentation. The approach: transform chaotic workflows into elegant, repeatable systems that grow with organizational complexity while maintaining clarity and efficiency.
-          </p>
+          <div class="card-services">
+            <h5 class="services-heading">Services</h5>
+            <dl class="services-list">
+              <dt>Process Architecture</dt>
+              <dd>Designing workflows that scale with organizational complexity while staying simple to follow.</dd>
+
+              <dt>Agile Transformation</dt>
+              <dd>Building frameworks for distributed teams—ceremonies, cadences, and communication patterns that actually work.</dd>
+
+              <dt>Operational Documentation</dt>
+              <dd>Runbooks, SOPs, and knowledge bases that people reference instead of ignore.</dd>
+
+              <dt>Issue & Request Systems</dt>
+              <dd>Intake, triage, and resolution workflows that reduce bottlenecks and cycle time.</dd>
+
+              <dt>Executive Reporting</dt>
+              <dd>Dashboards and reporting pipelines that surface what leadership needs to know.</dd>
+
+              <dt>Cross-Functional Enablement</dt>
+              <dd>Training materials, onboarding guides, and reference content that empowers teams to self-serve.</dd>
+
+              <dt>Change Management</dt>
+              <dd>Rolling out new processes with adoption strategies that stick.</dd>
+            </dl>
+          </div>
           <div class="card-footer">
             <a href="#contact" class="card-link">Learn More</a>
           </div>
@@ -101,13 +124,33 @@ import Header from '../components/Header.astro';
           <div class="card-header">
             <div>
               <h3 class="card-title">Bespoke Tooling</h3>
-              <p class="card-tagline">Built for your specific needs</p>
+              <p class="card-tagline">"If you can spec it, I can build it."</p>
             </div>
             <div class="card-number">03</div>
           </div>
-          <p class="card-description">
-            Production-grade solutions for problems off-the-shelf software can't solve. Recent work includes AI-powered applications leveraging Claude API with RAG architecture and anti-hallucination patterns, plus comprehensive analytics suites delivering actionable insights at Registria. Technical foundation: Python, Vue 3, FastAPI, SQL, modern development practices. The deliverable: full-stack tools that are both architecturally sound and genuinely useful—built precisely for your unique challenge.
-          </p>
+          <div class="card-services">
+            <h5 class="services-heading">Capabilities</h5>
+            <dl class="services-list">
+              <dt>AI-Powered Applications</dt>
+              <dd>Custom tools leveraging LLMs with RAG architecture, prompt engineering, and reliability patterns.</dd>
+
+              <dt>Internal Tools & Dashboards</dt>
+              <dd>Admin panels, analytics suites, and operational interfaces tailored to your workflow.</dd>
+
+              <dt>Workflow Automation</dt>
+              <dd>Scripts, integrations, and pipelines that eliminate repetitive manual work.</dd>
+
+              <dt>Data Processing & ETL</dt>
+              <dd>Pipelines that clean, transform, and move data where it needs to go.</dd>
+
+              <dt>API Development</dt>
+              <dd>RESTful services, integrations, and middleware connecting your systems.</dd>
+
+              <dt>Prototypes & MVPs</dt>
+              <dd>Functional proof-of-concepts to validate ideas before major investment.</dd>
+            </dl>
+            <p class="services-stack">Stack: Python, FastAPI, Vue 3, SQL, Claude API</p>
+          </div>
           <div class="card-footer">
             <a href="/TheNumber" class="card-link">The Number App</a>
           </div>
@@ -152,15 +195,7 @@ import Header from '../components/Header.astro';
               <li>Database Design</li>
             </ul>
           </div>
-          <div class="skill-category">
-            <h4>Design</h4>
-            <ul>
-              <li>UI/UX Design</li>
-              <li>Design Systems</li>
-              <li>Accessibility</li>
-              <li>Brand Strategy</li>
-            </ul>
-          </div>
+         
         </div>
       </div>
     </section>
@@ -176,8 +211,8 @@ import Header from '../components/Header.astro';
       </div>
 
       <div class="contact-content">
-        <a href="mailto:watson@foilindustries.com" class="contact-email">
-          watson@foilindustries.com
+        <a href="mailto:watson@foilengineering.com" class="contact-email">
+          watson@foilengineering.com
         </a>
         <p class="contact-note">
           Currently accepting freelance projects and product management opportunities.
@@ -188,162 +223,29 @@ import Header from '../components/Header.astro';
 
   <!-- FOOTER -->
   <footer class="site-footer">
-    <p>&copy; 2025 FOIL Engineering. Tools that make you better.</p>
+    <p>&copy; 2025 FOIL Engineering.</p>
   </footer>
 
-  <script>
-    // Check if user is already authenticated
-    const isAuthenticated = sessionStorage.getItem('foil-auth') === 'true';
-    const overlay = document.getElementById('password-overlay');
-    const form = document.getElementById('password-form');
-    const input = document.getElementById('password-input');
-    const error = document.getElementById('password-error');
-
-    if (isAuthenticated) {
-      overlay.style.display = 'none';
-    }
-
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const password = input.value;
-
-      if (password === 'loremipsum') {
-        sessionStorage.setItem('foil-auth', 'true');
-        overlay.style.opacity = '0';
-        setTimeout(() => {
-          overlay.style.display = 'none';
-        }, 300);
-      } else {
-        error.textContent = 'Incorrect password';
-        input.value = '';
-        input.classList.add('shake');
-        setTimeout(() => {
-          input.classList.remove('shake');
-        }, 500);
-      }
-    });
-  </script>
 </BaseLayout>
 
 <style>
-  /* PASSWORD OVERLAY */
-  .password-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, #1a1d21 0%, #2b2e33 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 9999;
-    opacity: 1;
-    transition: opacity 300ms ease;
-  }
-
-  .password-container {
-    text-align: center;
-    max-width: 400px;
-    padding: 60px 40px;
-    background: rgba(53, 56, 61, 0.6);
-    border-radius: 16px;
-    border: 1px solid rgba(74, 95, 122, 0.2);
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-  }
-
-  .password-logo {
-    margin-bottom: 24px;
-    display: flex;
-    justify-content: center;
-  }
-
-  .password-title {
-    font-size: 32px;
-    font-weight: 700;
-    color: var(--color-mustard);
-    margin-bottom: 8px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-  }
-
-  .password-subtitle {
-    font-size: 14px;
-    color: rgba(209, 209, 209, 0.7);
-    margin-bottom: 32px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-  }
-
-  .password-form {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
-
-  .password-input {
-    padding: 16px 20px;
-    background: rgba(26, 29, 33, 0.8);
-    border: 2px solid rgba(74, 95, 122, 0.3);
-    border-radius: 8px;
-    color: var(--color-off-white);
-    font-size: 16px;
-    text-align: center;
-    transition: all 200ms ease;
-  }
-
-  .password-input:focus {
-    outline: none;
-    border-color: var(--color-mustard);
-    box-shadow: 0 0 0 3px rgba(212, 160, 23, 0.1);
-  }
-
-  .password-input.shake {
-    animation: shake 0.5s;
-  }
-
-  @keyframes shake {
-    0%, 100% { transform: translateX(0); }
-    10%, 30%, 50%, 70%, 90% { transform: translateX(-8px); }
-    20%, 40%, 60%, 80% { transform: translateX(8px); }
-  }
-
-  .password-submit {
-    padding: 16px 32px;
-    background: var(--color-mustard);
-    color: var(--color-charcoal);
-    border: none;
-    border-radius: 8px;
-    font-size: 14px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    cursor: pointer;
-    transition: all 200ms ease;
-  }
-
-  .password-submit:hover {
-    background: var(--color-gold);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(212, 160, 23, 0.3);
-  }
-
-  .password-error {
-    color: var(--color-terracotta);
-    font-size: 14px;
-    min-height: 20px;
-  }
-
   /* HERO SECTION */
   .hero-section {
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: var(--spacing-4xl) 18% 100px 24%;
+    padding: var(--spacing-4xl) 5% 100px 5%;
     text-align: center;
     position: relative;
     margin-top: 90px;
+  }
+
+  /* Desktop: offset hero for sidebar */
+  @media (min-width: 1024px) {
+    .hero-section {
+      padding-left: 200px;
+    }
   }
 
   /* Light explosion from bottom-left - inspired by photographic lens flare */
@@ -678,6 +580,53 @@ import Header from '../components/Header.astro';
     color: rgba(43, 46, 51, 0.75);
     line-height: 1.7;
     margin-bottom: var(--spacing-md);
+  }
+
+  /* SERVICE LIST STYLES */
+  .card-services {
+    margin-bottom: var(--spacing-md);
+  }
+
+  .services-heading {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--color-slate-blue);
+    margin-bottom: var(--spacing-sm);
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(74, 95, 122, 0.15);
+  }
+
+  .services-list {
+    display: grid;
+    gap: 12px;
+  }
+
+  .services-list dt {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--color-card-dark-text);
+    margin-bottom: 2px;
+  }
+
+  .services-list dd {
+    font-size: 13px;
+    color: rgba(43, 46, 51, 0.65);
+    line-height: 1.5;
+    margin-left: 0;
+    padding-left: 12px;
+    border-left: 2px solid rgba(212, 160, 23, 0.3);
+  }
+
+  .services-stack {
+    margin-top: var(--spacing-sm);
+    padding-top: var(--spacing-sm);
+    border-top: 1px solid rgba(74, 95, 122, 0.15);
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--color-slate-blue);
+    font-style: italic;
   }
 
   .card-footer {

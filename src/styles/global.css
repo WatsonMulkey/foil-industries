@@ -289,6 +289,13 @@ a:hover {
    RESPONSIVE BREAKPOINTS
    ================================ */
 
+/* Desktop: Add left padding for sidebar nav */
+@media (min-width: 1024px) {
+  .section {
+    padding-left: 200px;
+  }
+}
+
 @media (max-width: 1023px) {
   :root {
     --spacing-3xl: 75px;
