@@ -49,10 +49,9 @@ import Header from '../components/Header.astro';
                 <span class="skill-pill">GTM Planning</span>
               </div>
             </div>
-            <a href="#contact" class="card-action-link">Learn More</a>
           </div>
           <div class="card-expand-trigger" role="button" tabindex="0" aria-expanded="false" aria-label="Expand details">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg width="32" height="32" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M5 8L10 13L15 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </div>
@@ -102,10 +101,9 @@ import Header from '../components/Header.astro';
                 <span class="skill-pill">Stakeholder Alignment</span>
               </div>
             </div>
-            <a href="#contact" class="card-action-link">Learn More</a>
           </div>
           <div class="card-expand-trigger" role="button" tabindex="0" aria-expanded="false" aria-label="Expand details">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg width="32" height="32" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M5 8L10 13L15 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </div>
@@ -152,10 +150,9 @@ import Header from '../components/Header.astro';
                 <span class="skill-pill">API Design</span>
               </div>
             </div>
-            <a href="/TheNumber" class="card-action-link">The Number App</a>
           </div>
           <div class="card-expand-trigger" role="button" tabindex="0" aria-expanded="false" aria-label="Expand details">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg width="32" height="32" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M5 8L10 13L15 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </div>
@@ -185,6 +182,26 @@ import Header from '../components/Header.astro';
             </div>
           </div>
         </article>
+      </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section id="projects" class="section projects-section">
+      <div class="section-header">
+        <div class="section-eyebrow">OUR WORK</div>
+        <h2 class="section-title">Projects</h2>
+      </div>
+      <div class="projects-grid">
+        <a href="/TheNumber" class="project-card">
+          <div class="project-screenshot">
+            <img src="/images/the-number-preview.png" alt="The Number app screenshot" />
+          </div>
+          <div class="project-info">
+            <h3 class="project-name">The Number</h3>
+            <p class="project-description">A personal budgeting app that tells you one number — how much you can spend today.</p>
+            <span class="project-cta">Try it &rarr;</span>
+          </div>
+        </a>
       </div>
     </section>
 
@@ -588,37 +605,11 @@ import Header from '../components/Header.astro';
     letter-spacing: 0.3px;
   }
 
-  .card-action-link {
-    display: inline-block;
-    padding: 10px 24px;
-    border: 2px solid var(--color-slate-blue);
-    background-color: transparent;
-    color: var(--color-slate-blue);
-    font-size: 12px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    border-radius: 6px;
-    transition: all var(--transition-base) ease;
-    white-space: nowrap;
-    align-self: flex-start;
-    flex-shrink: 0;
-  }
-
-  .card-action-link:hover,
-  .card-action-link:focus-visible {
-    background-color: var(--color-mustard);
-    border-color: var(--color-mustard);
-    color: var(--color-card-dark-text);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 16px rgba(212, 160, 23, 0.3);
-  }
-
   /* EXPAND TRIGGER */
   .card-expand-trigger {
     text-align: center;
     cursor: pointer;
-    padding: 4px 0;
+    padding: 8px 0;
     color: var(--color-slate-blue);
     transition: color var(--transition-base) ease;
   }
@@ -702,6 +693,85 @@ import Header from '../components/Header.astro';
     font-style: italic;
   }
 
+
+  /* PROJECTS SECTION */
+  .projects-section {
+    background-color: rgba(53, 56, 61, 0.15);
+  }
+
+  .projects-grid {
+    max-width: 950px;
+    margin: 0 auto;
+  }
+
+  .project-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xl);
+    background-color: var(--color-card-light);
+    border-radius: 12px;
+    border: 1px solid rgba(74, 95, 122, 0.12);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+    transition: all var(--transition-slow) var(--transition-spring);
+    text-decoration: none;
+  }
+
+  .project-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 24px 55px rgba(0, 0, 0, 0.5);
+    border-color: var(--color-slate-blue);
+  }
+
+  .project-screenshot {
+    background: rgba(43, 46, 51, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-lg);
+  }
+
+  .project-screenshot img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  }
+
+  .project-info {
+    padding: var(--spacing-xl) var(--spacing-xl) var(--spacing-xl) 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .project-name {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--color-card-dark-text);
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .project-description {
+    font-size: 16px;
+    color: rgba(43, 46, 51, 0.7);
+    line-height: 1.6;
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .project-cta {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--color-slate-blue);
+    transition: color var(--transition-base) ease;
+  }
+
+  .project-card:hover .project-cta {
+    color: var(--color-mustard);
+  }
 
   /* ABOUT SECTION */
   .about-content {
@@ -839,8 +909,16 @@ import Header from '../components/Header.astro';
       gap: 12px;
     }
 
-    .card-action-link {
-      align-self: flex-start;
+    .project-card {
+      grid-template-columns: 1fr;
+    }
+
+    .project-info {
+      padding: 0 var(--spacing-lg) var(--spacing-lg);
+    }
+
+    .project-screenshot {
+      padding: var(--spacing-md);
     }
 
     .contact-email {
