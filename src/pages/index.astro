@@ -1,58 +1,9 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
-import ServiceCard from '../components/ServiceCard.astro';
-import ProjectCard from '../components/ProjectCard.astro';
 import { Image } from 'astro:assets';
 import watsonHeadshot from '../assets/images/watson-headshot.jpg';
 import theNumberPreview from '../assets/images/the-number-preview.png';
-
-const serviceCards = [
-  {
-    title: 'Product Management',
-    tagline: '"People dont want to buy a quarter inch drill, they want a quarter inch hole."',
-    skills: ['Product Strategy', 'User Research', 'Data Analysis', 'GTM Planning'],
-    services: [
-      { title: 'Product Strategy & Vision', description: 'Defining product-market fit, user personas, competitive analysis, and long-term vision.' },
-      { title: '0-1 Product Management', description: 'Validating, designing, planning, building, testing, and launching new products and features.' },
-      { title: 'Agile Team Leadership', description: 'Agile ceremonies and facilitation for cross-functional teams of all sizes.' },
-      { title: 'Product Coaching', description: 'Working with new Product Managers and stakeholders to better represent product needs and process.' },
-      { title: 'Metrics & A/B Testing', description: 'Setting up data pipelines, dashboards, and experiments to measure success and inform roadmap decisions.' },
-      { title: 'Go-to-Market Strategy', description: 'How, where, and when to launch.' },
-      { title: 'User Research & Testing', description: 'Interviews, surveys, usability testing, and sentiment analysis.' },
-      { title: 'Roadmap Planning', description: 'Prioritization frameworks, stakeholder alignment, and delivery tracking.' },
-    ],
-  },
-  {
-    title: 'Service Design',
-    tagline: '"The best process is the one people actually follow."',
-    skills: ['Agile Leadership', 'Process Design', 'Roadmap Mgmt', 'Stakeholder Alignment'],
-    services: [
-      { title: 'Process Architecture', description: 'Designing workflows that scale with organizational complexity while staying simple to follow.' },
-      { title: 'Agile Transformation', description: 'Building frameworks for distributed teams\u2014ceremonies, cadences, and communication patterns that actually work.' },
-      { title: 'Operational Documentation', description: 'Runbooks, SOPs, and knowledge bases that people reference instead of ignore.' },
-      { title: 'Issue & Request Systems', description: 'Intake, triage, and resolution workflows that reduce bottlenecks and cycle time.' },
-      { title: 'Executive Reporting', description: 'Dashboards and reporting pipelines that surface what leadership needs to know.' },
-      { title: 'Cross-Functional Enablement', description: 'Training materials, onboarding guides, and reference content that empowers teams to self-serve.' },
-      { title: 'Change Management', description: 'Rolling out new processes with adoption strategies that stick.' },
-    ],
-  },
-  {
-    title: 'Bespoke Tooling',
-    tagline: '"If you can spec it, I can build it."',
-    skills: ['Python / FastAPI', 'Vue / Astro', 'AI / LLMs / RAG', 'API Design'],
-    servicesHeading: 'Capabilities',
-    services: [
-      { title: 'AI-Powered Applications', description: 'Custom tools leveraging LLMs with RAG architecture, prompt engineering, and reliability patterns.' },
-      { title: 'Internal Tools & Dashboards', description: 'Admin panels, analytics suites, and operational interfaces tailored to your workflow.' },
-      { title: 'Workflow Automation', description: 'Scripts, integrations, and pipelines that eliminate repetitive manual work.' },
-      { title: 'Data Processing & ETL', description: 'Pipelines that clean, transform, and move data where it needs to go.' },
-      { title: 'API Development', description: 'RESTful services, integrations, and middleware connecting your systems.' },
-      { title: 'Prototypes & MVPs', description: 'Functional proof-of-concepts to validate ideas before major investment.' },
-    ],
-    stackNote: 'Stack: Python, FastAPI, Vue 3, SQL, Claude API',
-  },
-];
 ---
 
 <BaseLayout>
@@ -87,16 +38,153 @@ const serviceCards = [
       </div>
 
       <div class="solutions-grid">
-        {serviceCards.map(card => (
-          <ServiceCard
-            title={card.title}
-            tagline={card.tagline}
-            skills={card.skills}
-            servicesHeading={card.servicesHeading}
-            services={card.services}
-            stackNote={card.stackNote}
-          />
-        ))}
+        <!-- Product Management Card -->
+        <article class="tool-card">
+          <div class="card-gradient-top"></div>
+          <div class="card-header">
+            <div>
+              <h3 class="card-title">Product Management</h3>
+              <p class="card-tagline">"People dont want to buy a quarter inch drill, they want a quarter inch hole."</p>
+              <div class="card-skills">
+                <span class="skill-pill">Product Strategy</span>
+                <span class="skill-pill">User Research</span>
+                <span class="skill-pill">Data Analysis</span>
+                <span class="skill-pill">GTM Planning</span>
+              </div>
+            </div>
+          </div>
+          <div class="card-expand-trigger" role="button" tabindex="0" aria-expanded="false" aria-label="Expand details">
+            <svg width="32" height="32" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 8L10 13L15 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="card-services">
+            <div class="card-services-inner">
+              <h5 class="services-heading">Services</h5>
+              <dl class="services-list">
+                <dt>Product Strategy & Vision</dt>
+                <dd>Defining product-market fit, user personas, competitive analysis, and long-term vision.</dd>
+
+                <dt>0-1 Product Management</dt>
+                <dd>Validating, designing, planning, building, testing, and launching new products and features.</dd>
+
+                <dt>Agile Team Leadership</dt>
+                <dd>Agile ceremonies and facilitation for cross-functional teams of all sizes.</dd>
+
+                <dt>Product Coaching</dt>
+                <dd>Working with new Product Managers and stakeholders to better represent product needs and process.</dd>
+
+                <dt>Metrics & A/B Testing</dt>
+                <dd>Setting up data pipelines, dashboards, and experiments to measure success and inform roadmap decisions.</dd>
+
+                <dt>Go-to-Market Strategy</dt>
+                <dd>How, where, and when to launch.</dd>
+
+                <dt>User Research & Testing</dt>
+                <dd>Interviews, surveys, usability testing, and sentiment analysis.</dd>
+
+                <dt>Roadmap Planning</dt>
+                <dd>Prioritization frameworks, stakeholder alignment, and delivery tracking.</dd>
+              </dl>
+            </div>
+          </div>
+        </article>
+
+        <!-- Service Design Card -->
+        <article class="tool-card">
+          <div class="card-gradient-top"></div>
+          <div class="card-header">
+            <div>
+              <h3 class="card-title">Service Design</h3>
+              <p class="card-tagline">"The best process is the one people actually follow."</p>
+              <div class="card-skills">
+                <span class="skill-pill">Agile Leadership</span>
+                <span class="skill-pill">Process Design</span>
+                <span class="skill-pill">Roadmap Mgmt</span>
+                <span class="skill-pill">Stakeholder Alignment</span>
+              </div>
+            </div>
+          </div>
+          <div class="card-expand-trigger" role="button" tabindex="0" aria-expanded="false" aria-label="Expand details">
+            <svg width="32" height="32" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 8L10 13L15 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="card-services">
+            <div class="card-services-inner">
+              <h5 class="services-heading">Services</h5>
+              <dl class="services-list">
+                <dt>Process Architecture</dt>
+                <dd>Designing workflows that scale with organizational complexity while staying simple to follow.</dd>
+
+                <dt>Agile Transformation</dt>
+                <dd>Building frameworks for distributed teams—ceremonies, cadences, and communication patterns that actually work.</dd>
+
+                <dt>Operational Documentation</dt>
+                <dd>Runbooks, SOPs, and knowledge bases that people reference instead of ignore.</dd>
+
+                <dt>Issue & Request Systems</dt>
+                <dd>Intake, triage, and resolution workflows that reduce bottlenecks and cycle time.</dd>
+
+                <dt>Executive Reporting</dt>
+                <dd>Dashboards and reporting pipelines that surface what leadership needs to know.</dd>
+
+                <dt>Cross-Functional Enablement</dt>
+                <dd>Training materials, onboarding guides, and reference content that empowers teams to self-serve.</dd>
+
+                <dt>Change Management</dt>
+                <dd>Rolling out new processes with adoption strategies that stick.</dd>
+              </dl>
+            </div>
+          </div>
+        </article>
+
+        <!-- Bespoke Tooling Card -->
+        <article class="tool-card">
+          <div class="card-gradient-top"></div>
+          <div class="card-header">
+            <div>
+              <h3 class="card-title">Bespoke Tooling</h3>
+              <p class="card-tagline">"If you can spec it, I can build it."</p>
+              <div class="card-skills">
+                <span class="skill-pill">Python / FastAPI</span>
+                <span class="skill-pill">Vue / Astro</span>
+                <span class="skill-pill">AI / LLMs / RAG</span>
+                <span class="skill-pill">API Design</span>
+              </div>
+            </div>
+          </div>
+          <div class="card-expand-trigger" role="button" tabindex="0" aria-expanded="false" aria-label="Expand details">
+            <svg width="32" height="32" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 8L10 13L15 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="card-services">
+            <div class="card-services-inner">
+              <h5 class="services-heading">Capabilities</h5>
+              <dl class="services-list">
+                <dt>AI-Powered Applications</dt>
+                <dd>Custom tools leveraging LLMs with RAG architecture, prompt engineering, and reliability patterns.</dd>
+
+                <dt>Internal Tools & Dashboards</dt>
+                <dd>Admin panels, analytics suites, and operational interfaces tailored to your workflow.</dd>
+
+                <dt>Workflow Automation</dt>
+                <dd>Scripts, integrations, and pipelines that eliminate repetitive manual work.</dd>
+
+                <dt>Data Processing & ETL</dt>
+                <dd>Pipelines that clean, transform, and move data where it needs to go.</dd>
+
+                <dt>API Development</dt>
+                <dd>RESTful services, integrations, and middleware connecting your systems.</dd>
+
+                <dt>Prototypes & MVPs</dt>
+                <dd>Functional proof-of-concepts to validate ideas before major investment.</dd>
+              </dl>
+              <p class="services-stack">Stack: Python, FastAPI, Vue 3, SQL, Claude API</p>
+            </div>
+          </div>
+        </article>
       </div>
     </section>
 
@@ -107,14 +195,16 @@ const serviceCards = [
         <h2 class="section-title">Projects</h2>
       </div>
       <div class="projects-grid">
-        <ProjectCard
-          href="/TheNumber"
-          name="The Number"
-          description="A personal budgeting app that tells you one number — how much you can spend today."
-          cta="Try it"
-          image={theNumberPreview}
-          imageAlt="The Number app screenshot"
-        />
+        <a href="/TheNumber" class="project-card">
+          <div class="project-screenshot">
+            <Image src={theNumberPreview} alt="The Number app screenshot" loading="lazy" />
+          </div>
+          <div class="project-info">
+            <h3 class="project-name">The Number</h3>
+            <p class="project-description">A personal budgeting app that tells you one number — how much you can spend today.</p>
+            <span class="project-cta">Try it &rarr;</span>
+          </div>
+        </a>
       </div>
     </section>
 
@@ -424,6 +514,188 @@ const serviceCards = [
     gap: 20px;
   }
 
+  .tool-card {
+    background-color: var(--color-card-light);
+    padding: 16px 20px;
+    border-radius: 12px;
+    border: 1px solid rgba(74, 95, 122, 0.12);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
+    position: relative;
+    overflow: hidden;
+    transition: all var(--transition-slow) var(--transition-spring);
+  }
+
+  /* Top gradient accent (hidden by default) */
+  .card-gradient-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--color-slate-blue) 0%, var(--color-terracotta) 100%);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 370ms ease;
+  }
+
+  .tool-card:hover .card-gradient-top,
+  .tool-card:focus-within .card-gradient-top {
+    transform: scaleX(1);
+  }
+
+  .tool-card:hover,
+  .tool-card:focus-within {
+    transform: translateY(-9px);
+    box-shadow: 0 24px 55px rgba(0, 0, 0, 0.5);
+    border-color: var(--color-slate-blue);
+  }
+
+  /* Radial glow on hover */
+  .tool-card::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(74, 95, 122, 0.08) 0%, transparent 70%);
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity var(--transition-slow) ease;
+    pointer-events: none;
+  }
+
+  .tool-card:hover::before,
+  .tool-card:focus-within::before {
+    opacity: 1;
+  }
+
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: var(--spacing-sm);
+    position: relative;
+  }
+
+  .card-title {
+    color: var(--color-card-dark-text);
+    margin-bottom: 6px;
+  }
+
+  .card-tagline {
+    font-size: 15px;
+    font-weight: 600;
+    font-style: italic;
+    color: var(--color-ochre);
+    margin-bottom: 8px;
+  }
+
+  .card-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .skill-pill {
+    font-size: 10px;
+    padding: 4px 10px;
+    background: rgba(74, 95, 122, 0.15);
+    color: var(--color-steel-blue);
+    border-radius: 12px;
+    border: 1px solid rgba(74, 95, 122, 0.2);
+    font-weight: 600;
+    letter-spacing: 0.3px;
+  }
+
+  /* EXPAND TRIGGER */
+  .card-expand-trigger {
+    text-align: center;
+    cursor: pointer;
+    padding: 8px 0;
+    color: var(--color-slate-blue);
+    transition: color var(--transition-base) ease;
+  }
+
+  .card-expand-trigger:hover {
+    color: var(--color-mustard);
+  }
+
+  .card-expand-trigger svg {
+    transition: transform var(--transition-slow) var(--transition-spring);
+  }
+
+  .tool-card.is-expanded .card-expand-trigger svg {
+    transform: rotate(180deg);
+  }
+
+  /* SERVICE LIST STYLES (Accordion) */
+  .card-services {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows var(--transition-slow) var(--transition-spring);
+  }
+
+  .tool-card.is-expanded .card-services {
+    grid-template-rows: 1fr;
+  }
+
+  .card-services-inner {
+    min-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: opacity var(--transition-base) ease;
+    padding-top: 0;
+  }
+
+  .tool-card.is-expanded .card-services-inner {
+    opacity: 1;
+    transition-delay: 100ms;
+    padding-top: var(--spacing-sm);
+  }
+
+  .services-heading {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--color-slate-blue);
+    margin-bottom: var(--spacing-sm);
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(74, 95, 122, 0.15);
+  }
+
+  .services-list {
+    display: grid;
+    gap: 12px;
+  }
+
+  .services-list dt {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--color-card-dark-text);
+    margin-bottom: 2px;
+  }
+
+  .services-list dd {
+    font-size: 13px;
+    color: rgba(43, 46, 51, 0.65);
+    line-height: 1.5;
+    margin-left: 0;
+    padding-left: 12px;
+    border-left: 2px solid rgba(212, 160, 23, 0.3);
+  }
+
+  .services-stack {
+    margin-top: var(--spacing-sm);
+    padding-top: var(--spacing-sm);
+    border-top: 1px solid rgba(74, 95, 122, 0.15);
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--color-slate-blue);
+    font-style: italic;
+  }
+
   /* PROJECTS SECTION */
   .projects-section {
     background-color: rgba(53, 56, 61, 0.15);
@@ -551,7 +823,6 @@ const serviceCards = [
     font-style: italic;
   }
 
-
   /* CONTACT SECTION */
   .contact-section {
     background-color: rgba(53, 56, 61, 0.5);
@@ -630,6 +901,15 @@ const serviceCards = [
       font-size: 18px;
     }
 
+    .tool-card {
+      padding: 14px 16px;
+    }
+
+    .card-header {
+      flex-direction: column;
+      gap: 12px;
+    }
+
     .project-card {
       grid-template-columns: 1fr;
     }
@@ -663,3 +943,20 @@ const serviceCards = [
   }
 </style>
 
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.card-expand-trigger').forEach(trigger => {
+      trigger.addEventListener('click', () => {
+        const card = trigger.closest('.tool-card');
+        const isExpanded = card.classList.toggle('is-expanded');
+        trigger.setAttribute('aria-expanded', String(isExpanded));
+      });
+      trigger.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          trigger.click();
+        }
+      });
+    });
+  });
+</script>
