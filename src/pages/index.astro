@@ -1,6 +1,58 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import { Image } from 'astro:assets';
+import watsonHeadshot from '../assets/images/watson-headshot.jpg';
+import theNumberPreview from '../assets/images/the-number-preview.png';
+
+const serviceCards = [
+  {
+    title: 'Product Management',
+    tagline: '"People dont want to buy a quarter inch drill, they want a quarter inch hole."',
+    skills: ['Product Strategy', 'User Research', 'Data Analysis', 'GTM Planning'],
+    services: [
+      { title: 'Product Strategy & Vision', description: 'Defining product-market fit, user personas, competitive analysis, and long-term vision.' },
+      { title: '0-1 Product Management', description: 'Validating, designing, planning, building, testing, and launching new products and features.' },
+      { title: 'Agile Team Leadership', description: 'Agile ceremonies and facilitation for cross-functional teams of all sizes.' },
+      { title: 'Product Coaching', description: 'Working with new Product Managers and stakeholders to better represent product needs and process.' },
+      { title: 'Metrics & A/B Testing', description: 'Setting up data pipelines, dashboards, and experiments to measure success and inform roadmap decisions.' },
+      { title: 'Go-to-Market Strategy', description: 'How, where, and when to launch.' },
+      { title: 'User Research & Testing', description: 'Interviews, surveys, usability testing, and sentiment analysis.' },
+      { title: 'Roadmap Planning', description: 'Prioritization frameworks, stakeholder alignment, and delivery tracking.' },
+    ],
+  },
+  {
+    title: 'Service Design',
+    tagline: '"The best process is the one people actually follow."',
+    skills: ['Agile Leadership', 'Process Design', 'Roadmap Mgmt', 'Stakeholder Alignment'],
+    services: [
+      { title: 'Process Architecture', description: 'Designing workflows that scale with organizational complexity while staying simple to follow.' },
+      { title: 'Agile Transformation', description: 'Building frameworks for distributed teams\u2014ceremonies, cadences, and communication patterns that actually work.' },
+      { title: 'Operational Documentation', description: 'Runbooks, SOPs, and knowledge bases that people reference instead of ignore.' },
+      { title: 'Issue & Request Systems', description: 'Intake, triage, and resolution workflows that reduce bottlenecks and cycle time.' },
+      { title: 'Executive Reporting', description: 'Dashboards and reporting pipelines that surface what leadership needs to know.' },
+      { title: 'Cross-Functional Enablement', description: 'Training materials, onboarding guides, and reference content that empowers teams to self-serve.' },
+      { title: 'Change Management', description: 'Rolling out new processes with adoption strategies that stick.' },
+    ],
+  },
+  {
+    title: 'Bespoke Tooling',
+    tagline: '"If you can spec it, I can build it."',
+    skills: ['Python / FastAPI', 'Vue / Astro', 'AI / LLMs / RAG', 'API Design'],
+    servicesHeading: 'Capabilities',
+    services: [
+      { title: 'AI-Powered Applications', description: 'Custom tools leveraging LLMs with RAG architecture, prompt engineering, and reliability patterns.' },
+      { title: 'Internal Tools & Dashboards', description: 'Admin panels, analytics suites, and operational interfaces tailored to your workflow.' },
+      { title: 'Workflow Automation', description: 'Scripts, integrations, and pipelines that eliminate repetitive manual work.' },
+      { title: 'Data Processing & ETL', description: 'Pipelines that clean, transform, and move data where it needs to go.' },
+      { title: 'API Development', description: 'RESTful services, integrations, and middleware connecting your systems.' },
+      { title: 'Prototypes & MVPs', description: 'Functional proof-of-concepts to validate ideas before major investment.' },
+    ],
+    stackNote: 'Stack: Python, FastAPI, Vue 3, SQL, Claude API',
+  },
+];
 ---
 
 <BaseLayout>
@@ -35,153 +87,16 @@ import Header from '../components/Header.astro';
       </div>
 
       <div class="solutions-grid">
-        <!-- Product Management Card -->
-        <article class="tool-card">
-          <div class="card-gradient-top"></div>
-          <div class="card-header">
-            <div>
-              <h3 class="card-title">Product Management</h3>
-              <p class="card-tagline">"People dont want to buy a quarter inch drill, they want a quarter inch hole."</p>
-              <div class="card-skills">
-                <span class="skill-pill">Product Strategy</span>
-                <span class="skill-pill">User Research</span>
-                <span class="skill-pill">Data Analysis</span>
-                <span class="skill-pill">GTM Planning</span>
-              </div>
-            </div>
-          </div>
-          <div class="card-expand-trigger" role="button" tabindex="0" aria-expanded="false" aria-label="Expand details">
-            <svg width="32" height="32" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M5 8L10 13L15 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-          <div class="card-services">
-            <div class="card-services-inner">
-              <h5 class="services-heading">Services</h5>
-              <dl class="services-list">
-                <dt>Product Strategy & Vision</dt>
-                <dd>Defining product-market fit, user personas, competitive analysis, and long-term vision.</dd>
-
-                <dt>0-1 Product Management</dt>
-                <dd>Validating, designing, planning, building, testing, and launching new products and features.</dd>
-
-                <dt>Agile Team Leadership</dt>
-                <dd>Agile ceremonies and facilitation for cross-functional teams of all sizes.</dd>
-
-                <dt>Product Coaching</dt>
-                <dd>Working with new Product Managers and stakeholders to better represent product needs and process.</dd>
-
-                <dt>Metrics & A/B Testing</dt>
-                <dd>Setting up data pipelines, dashboards, and experiments to measure success and inform roadmap decisions.</dd>
-
-                <dt>Go-to-Market Strategy</dt>
-                <dd>How, where, and when to launch.</dd>
-
-                <dt>User Research & Testing</dt>
-                <dd>Interviews, surveys, usability testing, and sentiment analysis.</dd>
-
-                <dt>Roadmap Planning</dt>
-                <dd>Prioritization frameworks, stakeholder alignment, and delivery tracking.</dd>
-              </dl>
-            </div>
-          </div>
-        </article>
-
-        <!-- Service Design Card -->
-        <article class="tool-card">
-          <div class="card-gradient-top"></div>
-          <div class="card-header">
-            <div>
-              <h3 class="card-title">Service Design</h3>
-              <p class="card-tagline">"The best process is the one people actually follow."</p>
-              <div class="card-skills">
-                <span class="skill-pill">Agile Leadership</span>
-                <span class="skill-pill">Process Design</span>
-                <span class="skill-pill">Roadmap Mgmt</span>
-                <span class="skill-pill">Stakeholder Alignment</span>
-              </div>
-            </div>
-          </div>
-          <div class="card-expand-trigger" role="button" tabindex="0" aria-expanded="false" aria-label="Expand details">
-            <svg width="32" height="32" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M5 8L10 13L15 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-          <div class="card-services">
-            <div class="card-services-inner">
-              <h5 class="services-heading">Services</h5>
-              <dl class="services-list">
-                <dt>Process Architecture</dt>
-                <dd>Designing workflows that scale with organizational complexity while staying simple to follow.</dd>
-
-                <dt>Agile Transformation</dt>
-                <dd>Building frameworks for distributed teams—ceremonies, cadences, and communication patterns that actually work.</dd>
-
-                <dt>Operational Documentation</dt>
-                <dd>Runbooks, SOPs, and knowledge bases that people reference instead of ignore.</dd>
-
-                <dt>Issue & Request Systems</dt>
-                <dd>Intake, triage, and resolution workflows that reduce bottlenecks and cycle time.</dd>
-
-                <dt>Executive Reporting</dt>
-                <dd>Dashboards and reporting pipelines that surface what leadership needs to know.</dd>
-
-                <dt>Cross-Functional Enablement</dt>
-                <dd>Training materials, onboarding guides, and reference content that empowers teams to self-serve.</dd>
-
-                <dt>Change Management</dt>
-                <dd>Rolling out new processes with adoption strategies that stick.</dd>
-              </dl>
-            </div>
-          </div>
-        </article>
-
-        <!-- Bespoke Tooling Card -->
-        <article class="tool-card">
-          <div class="card-gradient-top"></div>
-          <div class="card-header">
-            <div>
-              <h3 class="card-title">Bespoke Tooling</h3>
-              <p class="card-tagline">"If you can spec it, I can build it."</p>
-              <div class="card-skills">
-                <span class="skill-pill">Python / FastAPI</span>
-                <span class="skill-pill">Vue / Astro</span>
-                <span class="skill-pill">AI / LLMs / RAG</span>
-                <span class="skill-pill">API Design</span>
-              </div>
-            </div>
-          </div>
-          <div class="card-expand-trigger" role="button" tabindex="0" aria-expanded="false" aria-label="Expand details">
-            <svg width="32" height="32" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M5 8L10 13L15 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-          <div class="card-services">
-            <div class="card-services-inner">
-              <h5 class="services-heading">Capabilities</h5>
-              <dl class="services-list">
-                <dt>AI-Powered Applications</dt>
-                <dd>Custom tools leveraging LLMs with RAG architecture, prompt engineering, and reliability patterns.</dd>
-
-                <dt>Internal Tools & Dashboards</dt>
-                <dd>Admin panels, analytics suites, and operational interfaces tailored to your workflow.</dd>
-
-                <dt>Workflow Automation</dt>
-                <dd>Scripts, integrations, and pipelines that eliminate repetitive manual work.</dd>
-
-                <dt>Data Processing & ETL</dt>
-                <dd>Pipelines that clean, transform, and move data where it needs to go.</dd>
-
-                <dt>API Development</dt>
-                <dd>RESTful services, integrations, and middleware connecting your systems.</dd>
-
-                <dt>Prototypes & MVPs</dt>
-                <dd>Functional proof-of-concepts to validate ideas before major investment.</dd>
-              </dl>
-              <p class="services-stack">Stack: Python, FastAPI, Vue 3, SQL, Claude API</p>
-            </div>
-          </div>
-        </article>
+        {serviceCards.map(card => (
+          <ServiceCard
+            title={card.title}
+            tagline={card.tagline}
+            skills={card.skills}
+            servicesHeading={card.servicesHeading}
+            services={card.services}
+            stackNote={card.stackNote}
+          />
+        ))}
       </div>
     </section>
 
@@ -192,16 +107,14 @@ import Header from '../components/Header.astro';
         <h2 class="section-title">Projects</h2>
       </div>
       <div class="projects-grid">
-        <a href="/TheNumber" class="project-card">
-          <div class="project-screenshot">
-            <img src="/images/the-number-preview.png" alt="The Number app screenshot" />
-          </div>
-          <div class="project-info">
-            <h3 class="project-name">The Number</h3>
-            <p class="project-description">A personal budgeting app that tells you one number — how much you can spend today.</p>
-            <span class="project-cta">Try it &rarr;</span>
-          </div>
-        </a>
+        <ProjectCard
+          href="/TheNumber"
+          name="The Number"
+          description="A personal budgeting app that tells you one number — how much you can spend today."
+          cta="Try it"
+          image={theNumberPreview}
+          imageAlt="The Number app screenshot"
+        />
       </div>
     </section>
 
@@ -215,7 +128,7 @@ import Header from '../components/Header.astro';
       <div class="about-content">
         <div class="about-bio-layout">
           <div class="about-photo">
-            <img src="/images/watson-headshot.jpg" alt="Watson Mulkey" class="about-photo-img" />
+            <Image src={watsonHeadshot} alt="Watson Mulkey" class="about-photo-img" loading="lazy" />
           </div>
 
           <div class="about-bio">

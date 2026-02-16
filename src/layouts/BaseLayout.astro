@@ -1,4 +1,6 @@
 ---
+import { ViewTransitions } from 'astro:transitions';
+
 interface Props {
   title?: string;
   description?: string;
@@ -50,6 +52,9 @@ const ogImageURL = Astro.site ? new URL(ogImage, Astro.site).href : ogImage;
       href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
+
+    <!-- View Transitions -->
+    <ViewTransitions />
 
     <!-- Global Styles -->
     <style is:global>

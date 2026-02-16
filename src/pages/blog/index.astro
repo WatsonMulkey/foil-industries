@@ -25,6 +25,7 @@ const regularPosts = sortedPosts.filter(post => !post.data.featured);
     <!-- Blog Hero -->
     <section class="blog-hero section">
       <div class="container">
+        <a href="/" class="back-link">← Back to Home</a>
         <div class="section-header">
           <div class="section-eyebrow">Insights & Ideas</div>
           <h1 class="section-title">The FOIL Engineering Blog</h1>
@@ -118,6 +119,23 @@ const regularPosts = sortedPosts.filter(post => !post.data.featured);
 </BaseLayout>
 
 <style>
+  /* Back Link */
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    color: var(--color-medium-grey);
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: var(--spacing-lg);
+    transition: color var(--transition-base) ease;
+  }
+
+  .back-link:hover {
+    color: var(--color-mustard);
+  }
+
   /* Blog Hero */
   .blog-hero {
     padding-top: calc(90px + var(--spacing-3xl));

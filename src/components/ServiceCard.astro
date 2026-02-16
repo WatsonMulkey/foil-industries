@@ -1,0 +1,51 @@
+---
+interface ServiceItem {
+  title: string;
+  description: string;
+}
+
+interface Props {
+  title: string;
+  tagline: string;
+  skills: string[];
+  servicesHeading?: string;
+  services: ServiceItem[];
+  stackNote?: string;
+}
+
+const { title, tagline, skills, servicesHeading = 'Services', services, stackNote } = Astro.props;
+---
+
+<article class="tool-card">
+  <div class="card-gradient-top"></div>
+  <div class="card-header">
+    <div>
+      <h3 class="card-title">{title}</h3>
+      <p class="card-tagline">{tagline}</p>
+      <div class="card-skills">
+        {skills.map(skill => (
+          <span class="skill-pill">{skill}</span>
+        ))}
+      </div>
+    </div>
+  </div>
+  <div class="card-expand-trigger" role="button" tabindex="0" aria-expanded="false" aria-label="Expand details">
+    <svg width="32" height="32" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M5 8L10 13L15 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
+  <div class="card-services">
+    <div class="card-services-inner">
+      <h5 class="services-heading">{servicesHeading}</h5>
+      <dl class="services-list">
+        {services.map(service => (
+          <>
+            <dt>{service.title}</dt>
+            <dd>{service.description}</dd>
+          </>
+        ))}
+      </dl>
+      {stackNote && <p class="services-stack">{stackNote}</p>}
+    </div>
+  </div>
+</article>
