@@ -58,4 +58,4 @@ Prompts are suggestions. Architecture is constraint.
 
 ---
 
-*Building AI-powered tools and running into similar challenges? [Reach out](mailto:watson@foilengineering.com)—we'd love to compare notes.*
+*Building AI-powered tools and running into similar challenges? [Reach out](mailto:watson@foil.engineering)—we'd love to compare notes.*
