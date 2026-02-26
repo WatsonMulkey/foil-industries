@@ -8,8 +8,8 @@ interface Props {
 }
 
 const {
-  title = 'FOIL Engineering - Tools That Make You Better',
-  description = 'Product Manager & Builder of elegant tools designed to amplify your capabilities and elevate your professional impact.',
+  title = 'FOIL Engineering - Software That Fits Your Context',
+  description = 'Product consulting, process design, and bespoke software built around your constraints — team size, budget, existing systems. 10+ year product manager in Denver.',
   ogImage = '/og-image.png'
 } = Astro.props;
 
@@ -52,6 +52,73 @@ const ogImageURL = Astro.site ? new URL(ogImage, Astro.site).href : ogImage;
       href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "FOIL Engineering",
+      "description": "Product consulting, process design, and bespoke software built around your constraints — team size, budget, existing systems.",
+      "url": "https://foil.engineering",
+      "email": "watson@foil.engineering",
+      "founder": {
+        "@type": "Person",
+        "name": "Watson Mulkey",
+        "jobTitle": "Founder & Technical Product Manager"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Denver",
+        "addressRegion": "CO",
+        "addressCountry": "US"
+      },
+      "areaServed": "US",
+      "knowsAbout": [
+        "Bespoke software development",
+        "AI-native development",
+        "Product management consulting",
+        "Service design",
+        "Process architecture",
+        "Custom internal tools",
+        "MCP integrations",
+        "RAG architecture",
+        "Vue.js",
+        "Python",
+        "FastAPI"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Product Management",
+              "description": "Product strategy, 0-1 product management, user research, roadmap planning, and go-to-market strategy."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Service Design",
+              "description": "Process architecture, agile transformation, AI workflow design, operational documentation, and change management."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Bespoke Tooling",
+              "description": "Custom software built for your specific context. AI-native applications, internal tools, workflow automation, agent integrations, and MVPs."
+            }
+          }
+        ]
+      }
+    }
+    </script>
 
     <!-- View Transitions -->
     <ViewTransitions />

@@ -1,0 +1,27 @@
+# FOIL Engineering
+
+> Product consulting, process design, and bespoke software development in Denver, CO.
+
+## What We Do
+
+FOIL Engineering builds solutions that fit your real constraints — team size, budget, legacy systems, niche workflows. Sometimes that's a custom tool. Sometimes it's teaching a team how to think about problems differently. Every engagement starts with your context.
+
+## Services
+
+- Product Management: Strategy, 0-1 product development, user research, roadmap planning, A/B testing, go-to-market strategy
+- Service Design: Process architecture, agile transformation, AI workflow design, change management, operational documentation
+- Bespoke Tooling: AI-native applications, internal tools and dashboards, workflow automation, agent integrations, API development, prototypes and MVPs
+
+## Tech Stack
+
+Python, FastAPI, Vue 3, Astro, SQL, Claude API, MCP integrations, RAG architecture
+
+## Who
+
+Founded by Watson Mulkey, 10+ years product management experience. Previously at Bookshop.org, Discovery Education (Sony, Whirlpool, IBM clients).
+
+## Contact
+
+- Email: watson@foil.engineering
+- Web: https://foil.engineering
+- Location: Denver, Colorado
