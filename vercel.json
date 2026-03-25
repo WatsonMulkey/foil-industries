@@ -13,6 +13,18 @@
     {
       "source": "/TheNumber/:path*",
       "destination": "https://thenumber-rust.vercel.app/:path*"
+    },
+    {
+      "source": "/blindlisten",
+      "destination": "https://blind-listen.vercel.app/"
+    },
+    {
+      "source": "/blindlisten/",
+      "destination": "https://blind-listen.vercel.app/"
+    },
+    {
+      "source": "/blindlisten/:path*",
+      "destination": "https://blind-listen.vercel.app/:path*"
     }
   ],
   "headers": [
