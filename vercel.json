@@ -1,11 +1,19 @@
 {
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
-  "rewrites": [
+  "redirects": [
     {
       "source": "/TheNumber",
-      "destination": "https://thenumber-rust.vercel.app/"
+      "destination": "/TheNumber/",
+      "statusCode": 308
     },
+    {
+      "source": "/blindlisten",
+      "destination": "/blindlisten/",
+      "statusCode": 308
+    }
+  ],
+  "rewrites": [
     {
       "source": "/TheNumber/",
       "destination": "https://thenumber-rust.vercel.app/"
@@ -13,10 +21,6 @@
     {
       "source": "/TheNumber/:path*",
       "destination": "https://thenumber-rust.vercel.app/:path*"
-    },
-    {
-      "source": "/blindlisten",
-      "destination": "https://blind-listen.vercel.app/"
     },
     {
       "source": "/blindlisten/",
